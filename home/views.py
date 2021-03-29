@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Post
 
 
-def index(request):
+class index(ListView):
 
-    return render(request, 'home/index.html')
+    model = Post
+    template_name = 'home/index.html'
+    context_object_name = 'posts'
