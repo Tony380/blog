@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block content %}
-{% for message in messages %}
+    {% for message in messages %}
     <div class="alert alert-{{ message.tags }}" role="alert">
-        {{ message }}
+        {% if user.is_authenticated %}Hi {{user.username}}!{% endif %} {{ message }}
     </div>
-{% endfor %}
+    {% endfor %}
 <article class="media content-section">
     {% for post in posts %}
     <div class="media-body">
