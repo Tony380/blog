@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm, UserUpdateForm, ProfileUpdateForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate, get_user
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Profile
 
@@ -60,3 +61,9 @@ def logout_view(request):
     logout(request)
     messages.success(request, f"Good bye {user.username}! You have been logged out successfully!")
     return redirect('/')
+
+
+class PasswordView(SuccessMessageMixin, PasswordChangeView):
+    template_name = 'users/password.html'
+    success_url = 'profile'
+    success_message = "Votre mot de passe a été modifié avec succès !"
