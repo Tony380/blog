@@ -14,3 +14,4 @@ omit =
     */wsgi.py
     venv/*
     */travis.py
+    staticfiles/
