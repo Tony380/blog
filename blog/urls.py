@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from home.views import my_404_view, my_500_view
 from django.conf.urls.static import static
 from django.contrib.auth.views import (PasswordResetView, 
 PasswordResetCompleteView, 
@@ -16,6 +17,9 @@ urlpatterns = [
     path('password_reset_done', PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'),
     path('password_reset_complete', PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'),
 ]
+
+handler404 = my_404_view
+handler500 = my_500_view
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
