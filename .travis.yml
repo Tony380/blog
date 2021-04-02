@@ -4,7 +4,7 @@ python: '3.8'
 
 install: pip install -r requirements.txt
 
-services: postgresql
+services: sqlite3
 
 env: DJANGO_SETTINGS_MODULE=blog.settings
 
