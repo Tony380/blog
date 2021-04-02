@@ -8,6 +8,6 @@ services: sqlite3
 
 before_script: python manage.py collectstatic
 
-env: DJANGO_SETTINGS_MODULE=blog.travis
+env: DJANGO_SETTINGS_MODULE=blog.settings
 
 script: python manage.py test
