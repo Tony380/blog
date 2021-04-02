@@ -13,7 +13,6 @@ class TestHomeApp(TestCase):
         user = User.objects.create(username='test', email='test@gmail.com', password='passtest9876')
         Profile.objects.create(user=user)
         Post.objects.create(title='test12', content='test12', author=user)
-        user.profile.image = 'default.png'
 
 
     def test_model(self):
@@ -31,7 +30,7 @@ class TestHomeApp(TestCase):
 
     
     def test_display(self):
-        user = User.objects.get(username='test')
+        user = User.objects.get(id=1)
         response = self.client.get(reverse('home:display', args=[user]))
         self.assertEqual(response.status_code, 200)
 
