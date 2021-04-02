@@ -14,6 +14,7 @@ class TestUsersApp(TestCase):
         user = User.objects.create(username='test', email='test@gmail.com', password='passtest9876')
         Profile.objects.create(user=user)
         Post.objects.create(title='test12', content='test12', author=user)
+        user.profile.image = 'default.png'
 
 
     def test_register_view(self):
