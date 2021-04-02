@@ -8,8 +8,6 @@ omit =
     */urls.py
     */manage.py
     */apps.py
-    */forms.py
-    */communes.py
     */asgi.py
     */wsgi.py
     venv/*

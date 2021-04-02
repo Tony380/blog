@@ -39,9 +39,7 @@ class Update(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
-            return True
-        return False
+        return self.request.user == post.author
 
 
 class Delete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
@@ -50,9 +48,7 @@ class Delete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == post.author:
-            return True
-        return False
+        return self.request.user == post.author
 
 
 class Create(LoginRequiredMixin, CreateView):
