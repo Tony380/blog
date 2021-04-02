@@ -8,4 +8,6 @@ services: sqlite3
 
 env: DJANGO_SETTINGS_MODULE=blog.settings
 
+before_script: django-admin collectstatic
+
 script: python manage.py test
