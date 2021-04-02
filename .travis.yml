@@ -4,10 +4,10 @@ python: '3.9'
 
 install: pip install -r requirements.txt
 
-services: sqlite3
-
-env: DJANGO_SETTINGS_MODULE=blog.settings
+services: postgresql
 
 before_script: python manage.py collectstatic
+
+env: DJANGO_SETTINGS_MODULE=blog.travis
 
 script: python manage.py test
