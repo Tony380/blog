@@ -19,9 +19,9 @@ if os.environ.get('ENV') == 'PRODUCTION':
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 else:
     DEBUG = True
-    STATIC_URL = '/static/'
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
+    
+STATIC_URL = '/static/'
 ALLOWED_HOSTS = ['*']
 
 
