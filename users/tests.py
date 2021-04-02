@@ -57,4 +57,3 @@ class TestUsersApp(TestCase):
 
     def test_model(self):
         self.assertEqual(str(Profile.objects.get(id=1)), 'test')
-

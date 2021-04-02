@@ -58,13 +58,3 @@ class TestHomeApp(TestCase):
         post = user.posts.all().first().id
         response = self.client.post(reverse('home:delete', args=[post]))
         self.assertEqual(response.status_code, 302)
-
-
-    
-
-
-
-
-
-
-
