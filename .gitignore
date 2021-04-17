@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 profile_pics/
 staticfiles/
+.idea/
